@@ -7,7 +7,7 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
-model exemple   {
+model exemple {
     id String @id @default (cuid())
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt 
