@@ -12,7 +12,7 @@ export default function SignUpForm() {
   const router = useRouter();
 
   // This function will handle the user submitting their email and password
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (!isLoaded) {
       return;
@@ -38,7 +38,7 @@ export default function SignUpForm() {
   };
 
   // This function will handle the user submitting a code for verification
-  const onPressVerify = async (e: any) => {
+  const onPressVerify = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (!isLoaded) {
       return;
@@ -108,21 +108,23 @@ export default function SignUpForm() {
               className="input input-bordered w-full bg-slate-800"
             />
           </div>
-          <div className="flex justify-center pt-6 items-center">
+          <div className="flex items-center justify-center pt-6">
             <button
               className="btn w-52 rounded-full bg-purple-950 text-3xl"
               onClick={handleSubmit}
             >
               Sign up
             </button>
-            <a className='pl-5' href="/sign-in">U hv already an account?</a>
+            <a className="pl-5" href="/sign-in">
+              U hv already an account?
+            </a>
           </div>
         </form>
       )}
       {pendingVerification && (
         <div className="z-30 flex ">
           <div>
-            <form className="flex flex-col justify-center w-full">
+            <form className="flex w-full flex-col justify-center">
               <input
                 value={code}
                 placeholder="Code..."

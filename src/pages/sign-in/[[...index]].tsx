@@ -10,7 +10,7 @@ export default function SignInForm() {
   const router = useRouter();
 
   // Handle the submission of the sign-in form
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (!isLoaded) {
       return;
