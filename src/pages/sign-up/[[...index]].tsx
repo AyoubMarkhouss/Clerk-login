@@ -33,7 +33,7 @@ export default function SignUpForm() {
     } catch (err: any) {
       // This can return an array of errors.
       // See https://clerk.com/docs/custom-flows/error-handling to learn about error handling
-      console.error(JSON.stringify(err, null, 2));
+      void console.error(JSON.stringify(err, null, 2));
     }
   };
 
