@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { useSignIn } from "@clerk/nextjs";
 import { useRouter } from "next/router";
@@ -79,14 +81,16 @@ export default function SignInForm() {
             className="input input-bordered w-full bg-slate-800"
           />
         </div>
-        <div className="flex justify-center pt-6 items-center">
+        <div className="flex items-center justify-center pt-6">
           <button
             className="btn w-52 rounded-full bg-purple-950 text-3xl"
             onClick={handleSubmit}
           >
             Sign in
           </button>
-          <a className='pl-5' href="/sign-up">No account yet?</a>
+          <a className="pl-5" href="/sign-up">
+            No account yet?
+          </a>
         </div>
       </form>
     </div>
