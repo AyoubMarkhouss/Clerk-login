@@ -61,7 +61,7 @@ export default function SignUpForm() {
       if (completeSignUp.status === "complete") {
         await setActive({ session: completeSignUp.createdSessionId });
         // Redirect the user to a post sign-up route
-        router.push("/");
+       void router.push("/");
       }
     } catch (err: any) {
       // This can return an array of errors.
