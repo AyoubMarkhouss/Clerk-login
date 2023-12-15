@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
 import { useState } from "react";
 import { useSignUp } from "@clerk/nextjs";
 import { useRouter } from "next/router";
@@ -61,7 +62,7 @@ export default function SignUpForm() {
       if (completeSignUp.status === "complete") {
         await setActive({ session: completeSignUp.createdSessionId });
         // Redirect the user to a post sign-up route
-       void router.push("/");
+        void router.push("/");
       }
     } catch (err: any) {
       // This can return an array of errors.
